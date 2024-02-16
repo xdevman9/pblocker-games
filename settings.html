@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="pbgameslogo.png" />
+    <title>Settings | PB</title>
+    <style>
+      .text-center {
+        text-align: center;
+      }
+      
+      .header {
+      background-color: #333;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .header a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      transition: color 0.3s; 
+    }
+    .header a:hover {
+      color: #7289da; 
+    }
+    
+    </style>
+  </head>
+  <body style="background-color: #121212; color: #ffffff; font-family: 'Roboto', sans-serif; margin: 0; padding: 5%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div style="width: 100%; max-width: 600px; margin-bottom: 2em;">
+    <div style="width: 100%; max-width: 600px;">
+      <div>
+     <div class="header">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Games</a>
+    <a href="proxy.html">Proxy</a>
+    <a href="comingsoon.html">Settings</a>
+    <a href="credits.html">Credits</a>
+  </div>
+        <h1>Tab Cloaker</h1>
+        <p>Enter a new tab title or a image URL below. What you set will be used on the whole site.</p>
+        <p>
+          <input id="userinput" type="url" placeholder="Enter a title or image URL" autocomplete="on" style="width: 100%; padding: 10px; border: none; border-radius: 10px; background-color: #2c2c2c; color: #ffffff;" />
+        </p>
+        <p id="console-output"></p>
+      </div>
+      <div class="button-wrapper" style="display: flex; justify-content: space-between; margin-top: 1em;">
+        <button onclick="changeTabTitle();" style="padding: 10px 20px; border: none; border-radius: 10px; background-color: teal; color: #ffffff;">Set Title</button>
+        <button onclick="changeTabIcon();" style="padding: 10px 20px; border: none; border-radius: 10px; background-color: teal; color: #ffffff;">Set Icon</button>
+        <button onclick="resetTabSettings();" style="padding: 10px 20px; border: none; border-radius: 10px; background-color: teal; color: #ffffff;">Reset</button>
+      </div>
+    </div>
+<h1>
+  more settings soon...
+      </h1>
+    <script src="/js/misc.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
