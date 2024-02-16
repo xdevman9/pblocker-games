@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="static-title">Proxy | PB</title>
+  <meta name="googlebot" content="index, follow, snippet" />
+  <link rel="shortcut icon" href="pbgameslogo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .header {
+      background-color: #333;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .header a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      transition: color 0.3s; 
+    }
+    .header a:hover {
+      color: #7289da; 
+    }
+    
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      cursor: url(''), auto; 
+    }
+    a {
+      cursor: url(''), pointer; 
+    }
+    .search-container {
+      position: relative;
+      width: 300px;
+      margin: 30px auto 30px auto; 
+    }
+    #uv-address {
+      width: calc(100% - 40px);
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+    }
+    .desc {
+      margin-top: 20px; 
+    }
 
+    h1 {
+      background-color: none;
+      color: grey;
+      text-align: center;
+      margin: 180px auto 30px auto;
+    }
+  </style>
+  <script src="uv/uv.bundle.js" defer></script>
+  <script src="uv/uv.config.js" dfer></script>
+  <script src="register-sw.js" defer></script>
+  <script src="search.js" defer></script>
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <div class="header">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Games</a>
+    <a href="proxy.html">Proxy</a>
+    <a href="comingsoon.html">Settings</a>
+    <a href="credits.html">Credits</a>
+  </div>
+  <h1>PB | Proxy</h1>
+  <form id="uv-form" class="search-container">
+    <input
+      id="uv-search-engine"
+      value="https://www.google.com/search?q=%s"
+      type="hidden"
+    />
+    <input id="uv-address" type="text" placeholder="Search with Google or URL..." onkeypress="handleKeyPress(event)" />
+  </form>
+  <div class="desc left-margin">
+    <p id="uv-error"></p>
+    <pre id="uv-error-code"></pre>
+  </div>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    function handleKeyPress(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("uv-form").submit();
+      }
+    }
+  </script>
+</body>
+</html>
