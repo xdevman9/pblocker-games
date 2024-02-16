@@ -35,61 +35,69 @@
   </p>
   <h1 style="font-size: 3em; text-align: center;">Games</h1>
   <input type="text" id="search" onkeyup="searchGames()" placeholder="Search for games..." style="width: 100%; font-size: 18px; padding: 6px 20px; margin: auto; border-radius: 30px; max-width: 600px; margin-bottom: 10px;" />
+  <button onclick="playRandomGame()" style="padding: 10px 20px; margin-bottom: 20px; background-color: #7289da; color: white; border: none; border-radius: 5px; cursor: pointer;">Play Random Game</button>
   <div id="game-container" class="flex-container"></div>
   <script>
-          let games = [];
-      fetch("config/games.json")
-      .then((response) => response.json())
-      .then((data) => {
-        games = data;
-        const container = document.getElementById("game-container");
-        data.forEach((project) => {
+    let games = [];
+    fetch("config/games.json")
+    .then((response) => response.json())
+    .then((data) => {
+      games = data;
+      const container = document.getElementById("game-container");
+      data.forEach((project) => {
+        const game = document.createElement("a");
+        game.href = project.link;
+        game.className = "game-link container";
+        game.innerHTML = `
+        <div class="game-tile">
+          <img class="game-icon" src="${project.imgSrc}" alt="icon" />
+          <p class="game-title">${project.title}</p>
+        </div>`;
+        container.appendChild(game);
+      });
+      document.getElementById("loader").style.display = "none";
+    })
+    .catch((error) => console.error("Error:", error));
+
+    function searchGames() {
+      const input = document.getElementById("search");
+      const filter = input.value.toUpperCase();
+      const container = document.getElementById("game-container");
+      container.innerHTML = "";
+      games
+        .filter((game) => game.title.toUpperCase().includes(filter))
+        .forEach((project) => {
           const game = document.createElement("a");
           game.href = project.link;
-            game.className = "game-link container";
-            game.innerHTML = `
-            <div class="game-tile">
-              <img class="game-icon" src="${project.imgSrc}" alt="icon" />
-              <p class="game-title">${project.title}</p>
-              </div>`;
-              container.appendChild(game);
-          });
-          document.getElementById("loader").style.display = "none";
-        })
-        .catch((error) => console.error("Error:", error));
+          game.className = "game-link container";
+          game.innerHTML = `
+          <div class="game-tile">
+            <img class="game-icon" src="${project.imgSrc}" alt="icon" loading="lazy" />
+            <p class="game-title">${project.title}</p>
+          </div>`;
+          container.appendChild(game);
+        });
+    }
 
-      function searchGames() {
-        const input = document.getElementById("search");
-        const filter = input.value.toUpperCase();
-        const container = document.getElementById("game-container");
-        container.innerHTML = "";
-        games
-          .filter((game) => game.title.toUpperCase().includes(filter))
-          .forEach((project) => {
-            const game = document.createElement("a");
-            game.href = project.link;
-            game.className = "game-link container";
-            game.innerHTML = `
-            <div class="game-tile">
-              <img class="game-icon" src="${project.imgSrc}" alt="icon" loading="lazy" />
-              <p class="game-title">${project.title}</p>
-              </div>`;
-            container.appendChild(game);
-          });
-        }
-        const backToTopButton = document.getElementById('back-to-top');
-        window.onscroll = function () {
-          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            backToTopButton.style.display = "block";
-          } else {
-          backToTopButton.style.display = "none";
-        }
-      };
+    function playRandomGame() {
+      const randomIndex = Math.floor(Math.random() * games.length);
+      const randomGame = games[randomIndex];
+      window.location.href = randomGame.link;
+    }
 
-      backToTopButton.onclick = function () {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      };
+    const backToTopButton = document.getElementById('back-to-top');
+    window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    backToTopButton.onclick = function () {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    };
   </script>
 </body>
 </html>
