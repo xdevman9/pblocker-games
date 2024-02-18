@@ -32,6 +32,70 @@
     .header a:hover {
       color: #7289da; 
     }
+    .features {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .features h2 {
+      color: yellow;
+      margin-bottom: 10px;
+    }
+    .feature {
+      display: inline-block;
+      background-color: #333;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 0 15px;
+      width: 200px; 
+      text-align: center;
+    }
+    .feature h4 {
+      color: white;
+      margin-bottom: 5px;
+    }
+    .feature p {
+      color: white;
+      margin-top: 5px;
+    }
+    .button-group {
+      margin-top: 20px;
+    }
+    .button-group button {
+      background-color: Grey;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .button-group button:hover {
+      background-color: red;
+    }
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      cursor: url(''), auto; 
+    }
+    a {
+      cursor: url(''), pointer; 
+    }
+    .header {
+      background-color: #333;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .header a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      transition: color 0.3s; 
+    }
+    .header a:hover {
+      color: #7289da; 
+    }
     .card {
       background-color: #333;
       border-radius: 5px;
@@ -82,6 +146,21 @@
       color: white;
       margin-bottom: 5px;
     }
+    .partner {
+      display: inline-block;
+      margin: 10px;
+      text-align: center;
+    }
+    .partner img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+    .partner p {
+      color: white;
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
@@ -94,9 +173,45 @@
     <a href="credits.html">Credits</a>
   </div>
 
-  <div class="features">
+<div class="features">
     <h2>Partners</h2>
-
+    <div class="partner">
+      <a href="https://discord.gg/Kr3qaEFU6x">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAEsASwDASIAAhEBAxEB/8QAGwABAAMBAQEBAAAAAAAAAAAAAAIDBAEFBgf/xAA2EAACAgECBQEFBQgDAQAAAAAAAQIDEQQhBRIxQVFhEyIycYEjM0JSkQYUYnKhscHRQ4KS4f/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/xAAcEQEBAQEBAAMBAAAAAAAAAAAAARECEgMTITH/2gAMAwEAAhEDEQA/APkwAdmwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABbVp7bn9nXKS89jZXwi2S+0sjD5blktXHnA9yrhGnXxuc/rg1V8P0kelEH89zU4q+XzIProUUx+Gmtf9UXKEPyR/wDKNfXV8viwfavT0zWJ01y+cUZ7+CaK+L5a3VLzB/4JfjqXl8kD0tfwXUaOLsj9rUvxRW6+aPNObOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7ltNE7fSPk9CiiFW8V73lmpzqyMlOhssWZe5H+pvo0dNe/LzS8y3LEWRNznGpE4lkSuJZE3FTRZEriWRKqaLEVosiVU4lqKolqJUqa6HzvHuDxpjLV6WOIf8AJBfh9V6H0aJOEbYSrksxmuV/U52M1+eA7OPJZKGc8raOHJhwAAAAAAAAAAAAAAAAAAAAAAAAAADVRp+krP0FNXL70uv9jRE3I1IsiWRK4liNqmixFaLEVU4liK4liKJosiVosiVU0WIrRYiqsiWIriWIlSpohrNVDR6Sy+f4V7q8vsiGp1dOkq575qC7Lu/kj5TivFLOI2rbkph8EP8AL9Tl1WKwNtttvLe7ABzZcAAAAAAAAAAAAAAAAAAAAAAAAL6YY959exCuGd2XxNSLFiJohHoTRpViLI9CtdCa6GlWIsRWixFVOJYiuJYsJZbwiiaLImKzX6ar4rU34juZp8civuqW/WTwPUhseyixbLL2Xk+Ys4xq5/DKNa/hRksvtuebLJz/AJnkz9kT0+pu4ro9PnmtU2u0NzzdT+0VsttLWq1+aW7PEBi92pek7bbL5uds5Tk+8nkgAYZAAAAAAAAAAAAAAAAAAAAAAAADqWThKHUC2OywWIgiaNtRZEmiESaNKsROPQgjs7YVRzN4/wAgXI5ZqKqV9pNJ+O5512unPatci89zI228t5ZL0mvQt4pLpTFR9ZbsxWXW2v7ScpfNkAYtqaAAiAHyLYUyfXYCo6ot9EzVGqMe2X5JpJdAMiqm+x32E/Q1ADL7GfoRdc11ibD1+A6JWTlqbVlQeILtnz9BBl4f+zt2ojGzUz9hB9I4zJ/6PZq4Fw6pb0e0fmcmz0WyDZ0nLWM74boV00dH/gps4ToJrfSwX8uUbXIg5GvMXHkX/s7ppr7Gydb9feR5mp4Fq6cutRuX8L3/AEZ9Q5EGy+IY+InCdcnGyLjJdU1g4fZX1VXw5Lq4zj4aPI1fA4PMtLPlf5JPb9TF+OxLy8QFl1Funny3QcX69ys5suAAAAAAAAFkOhWWQ6FgsRNEETRtpZEmiCOW2ezhldX0A7fqVWsR3l/YxTlKcuaTbfqR6vLOmLdTXAARAAACUIOb26eTtcOd+iNKWFhAchXGC2WX5JgEAA42l1eAjoIe1ivL+Rz2y/KyqsPquGQ9lw6iPdx5n83ufI+1X5WfWcOuVugolHpyJfVbGuf6sa3Ii5EXIi2dsbSciDkcciDZqRUnIi2RbIthUnIg2cbIthHLq4XQ5LIqUX2Z4mt4VKrM9Pmce8e6/wBntNkXIz1JUsfKg9rXaBXZsqSVnddpf/TxpJxbTWGuxwsxizHAARAAACcO5A7F4ZYL0TRXEsRppYjPqZNzS7JGhGXUffSFKqABhkAAA7GLk9gll4RrhFQjhAQhDlJkjhAEpKKzIjOagvUqScnlvJRJ2SltDZCNeXkshDYvhXsXFUxq2Jqk1Qr26FsajUi4xewZ6fCrZafNNn3cnlPwydWnya4aTK3RZMFzkRcjjrlV6rwQ509s7+DrLK3Kk5EWzjZFso62RciLZFsCTZFsi2RbIJORFsi2RbIiTZi1ukV8XOC+0X9TS2RciX9L+vBwcN+voz9rFfzf7MJxsxzcABAAAFlcsbMvRkLqrcbS/U1KsaUZtRHFrb7o0xKtTHMVLxsy3+KzA6DKI4GCQwBZp4b8zNByEeWCR0iBGcuWOSRRZLmlt0QHFmbyy6ESEF0NEEWKnCJfCJCCL4I3FThE0Qh3ZCPQvh0NK0UxR6NMUjzapYNULdiWC3UxWDxdXFb4PSst6nn6lqWRg856q+rpLmXiW51cVini2pr1i8nLoGG6BNsTXrx1lNnSa+uxZzJrZng1S/C+3QujOUPhbXyYnZ6es2RbMMdZNfElL+hfG+E++H4Zr1KurWyLZFsi2VUnIg2cbItkR1tPZ9Dy76vZWOPbqj0WzPqoc9WV1juZ6/UrCADmyAAAAALa7nDZ7xNeI2QaTymYDsZyreYvBZV11pptPscJ2Wqx82MS7+CJQJVLNiREtoXvt+gF4OgiIWS5YN9yiCLNQ/hX1IRCrYovgtiqBdDoWC6KL4lMWaKoOzaJqLFkTRWpNbLYV1KK33ZejpOWsIVvq2Wxh6sjEsRaqMqObOJYfqjFqaZ1LMlt5XQ9NEnFTi4yWYvqjFZfN29zFYup6WtpdF8odV1T9Dz7TFRifuzTReU2FkHmCZllI5KPNFo6dwQU06qyvZvmj4Ztrujavde/hnmyWJNepxNxacXhrublaleo2RbKKb+f3ZbS/uWNmtV1shJ5Rxsi2RGOS5ZNPszhO37xkDFZAAQAAAAAHQBgBk0affJRgv0/covBwAUXv318jkRd8a+QiFXwLoEKKp2vEVt5fQ9OiiFS8y8m5LVkRo0ze9my8eTbBJLCWCCJo6yY3iaLIlaLEVViJxIImiVKsiTiQRNGKzXk8dSVtUu7i1/U8Wx5PU43apatQT+COH8zyJsxUZ7CVP3f1I2M7T939TNZWg4dTIMtv3kiJK37yRE0otuhphZzrfqZiUXysovbIuRFyIt7BULH75EN5YM1lwAEAAADqWQlkklgo5gHThVdLdO/ea9ConT8ewGkEo1yfbHzLY0Q/F739iSaYwyjK6eK4uWDdp9AliVr5v4V0NEUlskl8kWRNzlqROKSWEkl4RYitE0dFWImitFiKqaLEVosRVWImiCJolSrER1GohpqJWz6LovL8Fd+qq0sOa2W/aK6s8HW62zV2c0tor4Y+DnazVF1srZynJ5lJ5Znm9yUpYKpMxWVc2W1rEI/Iow5TUfJoM1HRnBw5J4iyDLKTc5P1GTgKJZBEF0T5iDlk4BoAAgAAAAAJwWxYkiuD7FiNRXVCPgmqoeAiaNK7GuH5UWxWOhFEkWKsRNEETRRNFiK0WIqposRWixFE0TRBE0VViJoqlOFa5pyUV5bMd3Fq4ZVEXN+Xsi7Ia9PmUYuUmkl1bMOp4so5jp1l/nf+DybtVbe82yb9OyKuY5XrWbVtlsrJOU5OUn3ZW5EXIg5GNZ0lIqlI7KRGKc5Y7dyInRHrJ/QtCWFhAgFV8sQx5LTLbLmn6IggACgAAAAAAAAAAAAAE42NdSCOgaITi+jLYmI6pyj0kzWrreiaMK1Fi8P5omtZNdYxZfUXW9E0eetc1/xr9SUeIPO9aX1L6i69FFiMP71LZqKwc/erfKXyRfcNekjsra6/jnGPzZ5UrrJdZy/UqnBS69fJPaenp2cU08F7nNY/RbGazi10tq0q156s8+UJR7ZRFMnumr53SseZycn5bOcxVk7kzqat5jjkVcw5gJuRFyI5b6ZZOFLe8tl4CIqLnLC/UvjFRWEdSwsJHSAARnJQjlkELp8scd2ZjspOUm2cKAAAAAAAAAAAAAAAAAAAAAAAAAAAtqt5fdl0NBiLK7XXt1XgDUCMZKaymSAEJVxl1W5MEFPsF2bHsX+YtAFXsPMiSpiuuWWAo4opdEkdAAAFdlqj6sglKSistmWybmxKTm8s4UcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB1Np5TwXQv7S/UoAGyM4y6MkYSSnKPSTA15ISsSZT7aZFzb6gaVZHySUk+jMnMOeS6MDYVztjHvlmZyk+rZwCyd0pdNkVgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/2Q==" alt="Celestial">
+      </a>
+      <p>Celestial</p>
+    </div>
+    <div class="partner">
+      <a href="https://discord.gg/WyDdtKSVej">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCABgAGADASIAAhEBAxEB/8QAGgABAAIDAQAAAAAAAAAAAAAAAAQFAQIDBv/EADkQAAICAgADBAcECQUAAAAAAAECAAMEEQUSIRMxQVEGFCIyYXHwI1Kh0RYkJTNUgZKxwUJic5Hh/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APGREQETJRgoYghT3HzmICJllKMVYaIOiJiAiIgIiICIiAiIHf1gbF2KBCx5R3CYR2RgykgjuIMkXPXcKUppIYKB372dmXXD+G14qiy0Brj1+CwICcNzc+1rrvs+Y72/+BJaej1f+vIYn4LqWZeY54FRfwbFrcJ66K3PUK4HX8ZEyuD5WOOYKLU+8nX8JZ53DlzLhb2pRtaPTcY+DkYgJx8vf+xl9k/jAobzUSvYhgOUb5j4zDWlq0QhdL5AblxkY1XEFsapBTl1+/X4H685UJRbZzclbsV7wBvUDnEEaiAiIgWvBscbbIcd3Rf8mXCLbcdVVu5HfyjchY69li1IPu7noOK5tnBxThYWq/Y5mfQJY/z+UCv9VzP4W7+gzDY2UilmxrVUDZJQ6Amr8c4myEJlFWPceRfykK3ivG7anrszQUcFWHKvUH+UCZZz0KrXo1Qb3S41v5TT1ulQS1qaHxl/njFzK6OF5gCrdSprs8VfuniczgmVhZL02lAVPQ7OiPMQNRbkZHEbL8Kqx2U82lUn2R0668J1y7uyuqzMRgDcOolr6I4zY+bmB2Uk4rdAfiJT41S4qLkZPePcT4wMcZC9vW2gtjJtwPOV06ZFzZFzWOepnOAiJ2x6Gu7QjoEXcC6Rga0PmBLX0qP7UT/iH9zKPDsFmKvmo0Z6XKpp48lV9WRXVkqnJZW519d8CJXxjCStFbhNLFVALEjr8fdm91OFxTAuyMKn1fIoHM9YPQj6E1/Ru7+Lxf6z+UmYPC7eHYnEDbdQ/aUELyMT10fhAh+lDqlmIWbQ7AdZnGy09JMBsbn5M+hd1WMPfH1+ci+lZxzdhNa3MRQBpT8ZSpkZSFbcRDUEO1K98C+9FqPVs/NrtJ9YWhuYeXUTz1P6129t5J7NNgeHjPacJzMPildvEPZpzewNV671vuIP4fWp4sfYcNYn3rj0+UCExB1pQOnhMREBJWDelRsS3fJYNEjwkWIFitFS77LOCA+G/wD2atVig/bZbP8AKQJKw76qm1dUrg+OtkQOivTvWPjM7eZ6zt6vl3fvGFS+Q75PqsqsUGogr8JuYESnApq6kc7ebSVoTMgFLwC2ZkCtPuqepgcDijIzrCvs1Kdsf7znkWpk5AXmCVINLGVmB0FNA5KR/wBn5yHAEaPfuIiAiIgIiIGyOyHaMVPmDqd1z8lRoWk/MAyNECS3EMlho2kfIASOzM7bYkk+JMxEBERAREQP/9k=" alt="Galactic">
+      </a>
+      <p>Galactic</p>
+    </div>
+    <div class="partner">
+      <a href="???">
+        <img src="https://cdn.vectorstock.com/i/preview-1x/46/73/question-mark-icon-isolated-flat-design-vector-45414673.jpg" alt="">
+      </a>
+      <p>?</p>
+    </div>
+  </div>
+  <div class="features">
+    <h2>Partner Rules:</h2>
+    <div class="feature">
+      <h4>No Leakers</h4>
+      <p>Make sure Your server has no link leakers</p>
+    </div>
+    <div class="feature">
+      <h4>50 Members</h4>
+      <p>Make sure you have at least 50 Member</p>
+    </div>
+  </div>
+  <div class="features">
+    <h2>Become a Partner?</h2>
+    <p>Click the button below to join our Discord server to Partner and agree to the partner rules.</p>
+    <div class="button-group">
+      <button onclick="window.open('https://discord.gg/bNcdNW6C6B', '_blank')">Join Discord</button>
+      <button onclick="alert('You have agreed to the partner rules.');">Agree to Rules</button>
+    </div>
   </div>
 </body>
 </html>
