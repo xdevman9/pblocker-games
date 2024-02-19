@@ -40,7 +40,6 @@ form.addEventListener("submit", async (event) => {
   var cloak = "https://"+window.location.hostname + __uv$config.prefix + __uv$config.encodeUrl(url);
   let r = await libcurl.fetch(cloak);
   let op = await r.text();
-    console.log(cloak+"\n"+r+"\n"+op)
     console.log(op)
   location.href = op
 });
