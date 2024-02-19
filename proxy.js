@@ -37,7 +37,7 @@ form.addEventListener("submit", async (event) => {
   }
 
   const url = search(address.value, searchEngine.value);
-  var cloak = window.location.hostname + __uv$config.prefix + __uv$config.encodeUrl(url);
+  var cloak = "https://"+window.location.hostname + __uv$config.prefix + __uv$config.encodeUrl(url);
   let r = await libcurl.fetch(cloak);
   let op = await r.text();
     console.log(cloak+"\n"+r+"\n"+op)
