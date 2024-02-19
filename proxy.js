@@ -40,5 +40,6 @@ form.addEventListener("submit", async (event) => {
   var cloak = __uv$config.prefix + __uv$config.encodeUrl(url);
   let r = await libcurl.fetch(location.href + cloak);
   let op = await r.text;
+    console.log(op)
   location.href = op
 });
