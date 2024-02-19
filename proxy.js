@@ -39,7 +39,7 @@ form.addEventListener("submit", async (event) => {
   const url = search(address.value, searchEngine.value);
   var cloak = __uv$config.prefix + __uv$config.encodeUrl(url);
   let r = await libcurl.fetch(location.href + cloak);
-  let op = await r.text;
+  let op = await r.text();
     console.log(op)
   location.href = op
 });
