@@ -20,6 +20,11 @@ const error = document.getElementById("uv-error");
  */
 const errorCode = document.getElementById("uv-error-code");
 
+document.addEventListener("libcurl_load", function () {
+    libcurl.set_websocket(`wss://wisp.mercurywork.shop/`);
+    console.log("libcurl.js ready!");
+})
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -32,5 +37,8 @@ form.addEventListener("submit", async (event) => {
   }
 
   const url = search(address.value, searchEngine.value);
-  location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+  var cloak = __uv$config.prefix + __uv$config.encodeUrl(url);
+  let r = await libcurl.fetch(location.href + cloak);
+  let op = await r.text;
+  location.href = op
 });
