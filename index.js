@@ -1,36 +1,35 @@
-"use strict";
-/**
- * @type {HTMLFormElement}
- */
-const form = document.getElementById("uv-form");
-/**
- * @type {HTMLInputElement}
- */
-const address = document.getElementById("uv-address");
-/**
- * @type {HTMLInputElement}
- */
-const searchEngine = document.getElementById("uv-search-engine");
-/**
- * @type {HTMLParagraphElement}
- */
-const error = document.getElementById("uv-error");
-/**
- * @type {HTMLPreElement}
- */
-const errorCode = document.getElementById("uv-error-code");
+let inFrame
 
-form.addEventListener("submit", async (event) => {
-  event.preventDefault();
+try {
+  inFrame = window !== top
+} catch (e) {
+  inFrame = true
+}
 
-  try {
-    await registerSW();
-  } catch (err) {
-    error.textContent = "Failed to register service worker.";
-    errorCode.textContent = err.toString();
-    throw err;
+if (!inFrame && !navigator.userAgent.includes('Firefox')) {
+  const popup = open('about:blank', '_blank')
+  if (!popup || popup.closed) alert('Please allow popups and redirects.')
+  else {
+    const doc = popup.document
+    const iframe = doc.createElement('iframe')
+    const style = iframe.style
+    const link = doc.createElement('link')
+
+    const name = localStorage.getItem('name') || 'My Drive - Google Drive'
+    const icon = localStorage.getItem('icon') || 'https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png'
+
+    doc.title = name
+    link.rel = 'icon'
+    link.href = icon
+
+    iframe.src = 'home.html'
+    style.position = 'fixed'
+    style.top = style.bottom = style.left = style.right = 0
+    style.border = style.outline = 'none'
+    style.width = style.height = '100%'
+
+    doc.head.appendChild(link)
+    doc.body.appendChild(iframe)
+    location.replace(localStorage.getItem('panicLink') || 'https://www.nasa.gov/')
   }
-
-  const url = search(address.value, searchEngine.value);
-  location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
-});
+}
