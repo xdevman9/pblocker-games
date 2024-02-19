@@ -24,7 +24,130 @@
     .header a:hover {
       color: #7289da; 
     }
-    
+    .blank {
+  background-color: #332f2f;
+  font-family: Lexend;
+  float: left;
+  border-radius: 8px;
+  width: 0px;
+  height: 0px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  transition: transform 0.54s ease-in-out, opacity 0.5s ease-in-out;
+  transition-duration: 0.4s;
+}
+
+.blank:hover {
+  transform: translateY(-10px);
+}
+
+.blank h3 {
+  text-align: center;
+  font-size: 30px;
+}
+.blank button {
+  border-radius: 9px;
+  font-family: Lexend;
+  padding: 10px 20px;
+  background-color: #6d25c4;
+  border: none;
+  margin-top: 30px;
+  color: white;
+  transition-duration: 0.4s;
+  font-size: 20px;
+}
+
+.blank button:hover {
+  cursor: pointer;
+  background-color: #4f109c;
+}
+
+#google {
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.54s ease-in-out, opacity 0.5s ease-in-out;
+  transition-duration: 0.4s;
+  margin-right: 10px;
+  background-color: white;
+}
+
+#google:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  opacity: 0.8;
+}
+
+#gmail {
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.54s ease-in-out, opacity 0.5s ease-in-out;
+  transition-duration: 0.4s;
+  margin-right: 10px;
+  background-color: white;
+}
+
+#gmail:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  opacity: 0.8;
+}
+
+#schoology {
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.54s ease-in-out, opacity 0.5s ease-in-out;
+  transition-duration: 0.4s;
+  margin-right: 10px;
+  background-color: white;
+}
+
+#schoology:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  opacity: 0.8;
+}
+
+#classroom {
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.54s ease-in-out, opacity 0.5s ease-in-out;
+  transition-duration: 0.4s;
+  margin-right: 10px;
+  background-color: white;
+}
+
+#classroom:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  opacity: 0.8;
+}
+
+#docs {
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.54s ease-in-out, opacity 0.5s ease-in-out;
+  transition-duration: 0.4s;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+h2 {
+  font-size: 30px; 
+  color: white; 
+}
+#docs:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  opacity: 0.8;
+}
+
+img {
+  height: 70px;
+  width: 70px;
+}
     </style>
   </head>
   <body style="background-color: #121212; color: #ffffff; font-family: 'Roboto', sans-serif; margin: 0; padding: 5%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -52,9 +175,33 @@
         <button onclick="resetTabSettings();" style="padding: 10px 20px; border: none; border-radius: 10px; background-color: teal; color: #ffffff;">Reset</button>
       </div>
     </div>
-<h1>
-  more settings soon...
-      </h1>
+      <h2>
+        About:blank and More Tab Cloaks
+      </h2>
+    <div class="settings-container">
+      <div style="margin-left: 20px;" class="blank">
+        <button class="blankbutton" onclick="aboutblank()">Launch About:Blank</button>
+      </div>
+      
+      <div style="margin-left: 200px;" class="cloakerr">
+        <div class="imgbutton">
+        <button value="Google" id="google" onclick="googleCloak();">
+          <img src="https://expresswriters.com/wp-content/uploads/2015/09/google-new-logo-450x450.jpg" alt="Google">
+        </button>
+        <button value="Gmail" id="gmail" onclick="gmailCloak();">
+          <img src="https://pbs.twimg.com/media/EjpVl1XX0AEgQm1?format=jpg&name=360x360" alt="Gmail">
+        </button>
+        <button value="Schoology" id="schoology" onclick="schoologyCloak();">
+          <img src="https://lausdschoology.azurewebsites.net/assets/images/schoology/schoologyLogo.png" alt="Schoology">
+        </button>
+        <button value="Classroom" id="classroom" onclick="classroomCloak();">
+          <img src="https://visualpharm.com/assets/356/Google%20Classroom-595b40b65ba036ed117d4179.svg" alt="Classroom">
+        </button>
+        <button value="Docs" id="docs" onclick="docsCloak();">
+          <img src="https://timingapp.com/cdn-cgi/image/format=auto,width=256/img/app-icons/com.google.Docs/logo.svg.png" alt="Docs">
+        </button>
+        </div>
+      </div>
     <script src="/js/settings.js"></script>
     <script src="/js/main.js"></script>
   </body>
