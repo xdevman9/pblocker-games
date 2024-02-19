@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="pbgameslogo.png" />
     <title>Settings | PB</title>
+    <script src="cloak.js"></script>
     <style>
       .text-center {
         text-align: center;
@@ -206,5 +207,10 @@ img {
       <h2>Themes coming soon...</h2>
     <script src="/js/settings.js"></script>
     <script src="/js/main.js"></script>
+      <script>
+      function aboutblank() {
+        var win = window.open(); var url = 'settings.html'; var iframe = win.document.createElement('iframe'); iframe.style="position:fixed;width:100vw;height:100vh;top:0px;left:0px;right:0px;bottom:0px;z-index:2147483647;background-color:white;border:none;"; iframe.src = url; win.document.body.appendChild(iframe);
+      }
+    </script>
   </body>
 </html>
