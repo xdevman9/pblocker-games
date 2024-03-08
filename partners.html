@@ -8,15 +8,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="pbgameslogo.png" type="image/x-icon" />
   <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
-      cursor: url(''), auto; 
-    }
-    a {
-      cursor: url(''), pointer; 
-    }
+    /* ocean.css */
+
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #001F3F, #003366);
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  height: 100%;
+  width: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.sidebar a img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 3px;
+}
+
+.sidebar a:hover {
+  background-color: cyan;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+}
+
     .header {
       background-color: #333;
       padding: 10px 0;
