@@ -7,178 +7,185 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="pbgameslogo.png" type="image/x-icon" />
-  <!-- Linking ocean.css -->
-<style>
-  /* ocean.css */
+  <style>
+    /* ocean.css */
 
-  /* Reset Styles */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    /* Reset Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  /* Global Styles */
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+    /* Global Styles */
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
 
-  body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #001F3F, #003366);
-    background-attachment: fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-  }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #001F3F, #003366);
+      background-attachment: fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+    }
 
-  /* Sidebar Styles */
-  .sidebar {
-    height: 100%;
-    width: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    /* Sidebar Styles */
+    .sidebar {
+      height: 100%;
+      width: 60px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #333;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .sidebar a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 5px;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 1;
-  }
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 5px;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
 
-  .sidebar a img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-bottom: 3px;
-  }
+    .sidebar a img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-bottom: 3px;
+    }
 
-  .sidebar a:hover {
-    background-color: cyan;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-  }
+    .sidebar a:hover {
+      background-color: cyan;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+    }
 
-  a {
-    cursor: url(''), pointer;
-  }
+    a {
+      cursor: url(''), pointer;
+    }
 
-  .header {
-    background-color: #333;
-    padding: 10px 0;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
+    .header {
+      background-color: #333;
+      padding: 10px 0;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
 
-  .header a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 18px;
-    transition: color 0.3s;
-    position: relative;
-    z-index: 1;
-    text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px blue, 0 0 60px indigo, 0 0 70px violet;
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rainbowAnimation 10s linear infinite;
-  }
-
-  @keyframes rainbowAnimation {
-    0% {
+    .header a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      transition: color 0.3s;
+      position: relative;
+      z-index: 1;
       text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px blue, 0 0 60px indigo, 0 0 70px violet;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowAnimation 10s linear infinite;
     }
-    50% {
-      text-shadow: 0 0 10px violet, 0 0 20px indigo, 0 0 30px blue, 0 0 40px green, 0 0 50px yellow, 0 0 60px orange, 0 0 70px red;
+
+    @keyframes rainbowAnimation {
+      0% {
+        text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px blue, 0 0 60px indigo, 0 0 70px violet;
+      }
+      50% {
+        text-shadow: 0 0 10px violet, 0 0 20px indigo, 0 0 30px blue, 0 0 40px green, 0 0 50px yellow, 0 0 60px orange, 0 0 70px red;
+      }
+      100% {
+        text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px blue, 0 0 60px indigo, 0 0 70px violet;
+      }
     }
-    100% {
-      text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px blue, 0 0 60px indigo, 0 0 70px violet;
+
+    .card {
+      background-color: #333;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 350px;
+      text-align: center;
+      transition: transform 0.3s;
     }
-  }
 
-  .card {
-    background-color: #333;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 350px;
-    text-align: center;
-    transition: transform 0.3s;
-  }
+    .card:hover {
+      transform: scale(1.05);
+    }
 
-  .card:hover {
-    transform: scale(1.05);
-  }
+    .card h3 {
+      color: white;
+    }
 
-  .card h3 {
-    color: white;
-  }
+    .card button {
+      background-color: #7289da;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
 
-  .card button {
-    background-color: #7289da;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-  }
+    .card button:hover {
+      background-color: #5a68a5;
+    }
 
-  .card button:hover {
-    background-color: #5a68a5;
-  }
+    .features {
+      text-align: center;
+      margin-top: 20px;
+    }
 
-  .features {
-    text-align: center;
-    margin-top: 20px;
-  }
+    .features h2 {
+      color: yellow;
+      margin-bottom: 10px;
+    }
 
-  .features h2 {
-    color: yellow;
-    margin-bottom: 10px;
-  }
+    .feature {
+      display: inline-block;
+      background-color: #333;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 0 15px;
+      width: 200px;
+      text-align: center;
+    }
 
-  .feature {
-    display: inline-block;
-    background-color: #333;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 0 15px;
-    width: 200px;
-    text-align: center;
-  }
-
-  .feature h4 {
-    color: white;
-    margin-bottom: 5px;
-  }
-</style>
-
+    .feature h4 {
+      color: white;
+      margin-bottom: 5px;
+    }
+  </style>
 </head>
 <body>
+  <script>
+    document.addEventListener("mousemove", function(event) {
+      const x = event.clientX / window.innerWidth;
+      const y = event.clientY / window.innerHeight;
+      const bg = `radial-gradient(circle at ${x * 100}% ${y * 100}%, green, blue, red)`;
+      document.body.style.background = bg;
+    });
+  </script>
+
   <div class="header">
     <a href="index.html">Home</a>
     <a href="projects.html">Games</a>
@@ -204,6 +211,5 @@
       <h4>Settings (More settings soon)</h4>
     </div>
   </div>
-  <script src="home.js"></script> <!-- Corrected script tag -->
 </body>
 </html>
