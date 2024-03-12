@@ -61,6 +61,8 @@
     width: 40px;
     height: 40px;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
   }
 
   .sidebar a img {
@@ -85,6 +87,8 @@
     background-color: #333;
     padding: 10px 0;
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   .header a {
@@ -95,51 +99,23 @@
     transition: color 0.3s;
     position: relative;
     z-index: 1;
-  }
-
-  .header a:hover {
-    color: #7289da;
-  }
-
-  .header a:nth-child(1) {
-    color: #ff6f61;
-  }
-
-  .header a:nth-child(2) {
-    color: #a0e7e5;
-  }
-
-  .header a:nth-child(3) {
-    color: #ffd166;
-  }
-
-  .header a:nth-child(4) {
-    color: #06d6a0;
-  }
-
-  .header a:nth-child(5) {
-    color: #118ab2;
-  }
-
-  .header a:nth-child(6) {
-    color: #073b4c;
-  }
-
-  .header a::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    transform: scaleX(0);
-    transition: transform 0.4s ease;
-    z-index: -1;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowAnimation 10s linear infinite;
   }
 
-  .header a:hover::before {
-    transform: scaleX(1);
+  @keyframes rainbowAnimation {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
   }
 
   .card {
@@ -150,6 +126,33 @@
     width: 350px;
     text-align: center;
     transition: transform 0.3s;
+    position: relative; /* Add this */
+    z-index: 0; /* Add this */
+  }
+
+  .card::before { /* Add this */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    z-index: -1;
+    border-radius: 5px;
+    animation: rainbowBoxAnimation 10s linear infinite;
+  }
+
+  @keyframes rainbowBoxAnimation { /* Add this */
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
   }
 
   .card:hover {
