@@ -83,39 +83,41 @@
     }
 
     .header {
-      background-color: #333;
+      background-color: transparent;
       padding: 10px 0;
       text-align: center;
       position: relative;
       z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .header a {
       color: white;
       text-decoration: none;
-      margin: 0 20px;
+      margin: 0 10px;
       font-size: 18px;
       transition: color 0.3s;
       position: relative;
       z-index: 1;
-      text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px blue, 0 0 60px indigo, 0 0 70px violet;
-      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbowAnimation 10s linear infinite;
     }
 
-    @keyframes rainbowAnimation {
-      0% {
-        text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px blue, 0 0 60px indigo, 0 0 70px violet;
-      }
-      50% {
-        text-shadow: 0 0 10px violet, 0 0 20px indigo, 0 0 30px blue, 0 0 40px green, 0 0 50px yellow, 0 0 60px orange, 0 0 70px red;
-      }
-      100% {
-        text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px blue, 0 0 60px indigo, 0 0 70px violet;
-      }
+    .header a:hover {
+      color: #7289da;
+    }
+
+    .header a span {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.2); /* Adjust opacity as needed */
+    }
+
+    .header a img {
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
     }
 
     .card {
@@ -177,22 +179,13 @@
   </style>
 </head>
 <body>
-  <script>
-    document.addEventListener("mousemove", function(event) {
-      const x = event.clientX / window.innerWidth;
-      const y = event.clientY / window.innerHeight;
-      const bg = `radial-gradient(circle at ${x * 100}% ${y * 100}%, black 1%, #00008B 5%, rgba(0, 0, 0, 0))`;
-      document.body.style.background = bg;
-    });
-  </script>
-
   <div class="header">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Games</a>
-    <a href="proxy.html">Proxy</a>
-    <a href="settings.html">Settings</a>
-    <a href="partners.html">Partners</a>
-    <a href="credits.html">Credits</a>
+    <a href="index.html"><img src="home_icon.png" alt="Home Icon" /><span>Home</span></a>
+    <a href="projects.html"><img src="games_icon.png" alt="Games Icon" /><span>Games</span></a>
+    <a href="proxy.html"><img src="proxy_icon.png" alt="Proxy Icon" /><span>Proxy</span></a>
+    <a href="settings.html"><img src="settings_icon.png" alt="Settings Icon" /><span>Settings</span></a>
+    <a href="partners.html"><img src="partners_icon.png" alt="Partners Icon" /><span>Partners</span></a>
+    <a href="credits.html"><img src="credits_icon.png" alt="Credits Icon" /><span>Credits</span></a>
   </div>
   <div class="card">
     <h3>Welcome to PB Games, a place where you can play unblocked games at your school even when they're blocked!</h3>
@@ -211,5 +204,44 @@
       <h4>Settings (More settings soon)</h4>
     </div>
   </div>
+  <script>
+    document.addEventListener("mousemove", function(event) {
+      const x = event.clientX / window.innerWidth;
+      const y = event.clientY / window.innerHeight;
+      const bg = `radial-gradient(circle at ${x * 100}% ${y * 100}%, black, #00008B 5%, rgba(0, 0, 0, 0))`;
+      document.body.style.background = bg;
+    });
+  </script>
+  <script>
+    const trailLength = 20;
+    const trailElements = [];
+
+    for (let i = 0; i < trailLength; i++) {
+      const trail = document.createElement('div');
+      trail.classList.add('trail');
+      document.body.appendChild(trail);
+      trailElements.push(trail);
+    }
+
+    document.addEventListener('mousemove', (event) => {
+      const x = event.clientX;
+      const y = event.clientY;
+
+      for (let i = trailElements.length - 1; i > 0; i--) {
+        const prevTrail = trailElements[i - 1];
+        const currentTrail = trailElements[i];
+
+        const prevTrailStyle = getComputedStyle(prevTrail);
+        const left = parseFloat(prevTrailStyle.left);
+        const top = parseFloat(prevTrailStyle.top);
+
+        currentTrail.style.left = `${left}px`;
+        currentTrail.style.top = `${top}px`;
+      }
+
+      trailElements[0].style.left = `${x}px`;
+      trailElements[0].style.top = `${y}px`;
+    });
+  </script>
 </body>
 </html>
