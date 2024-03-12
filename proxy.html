@@ -74,6 +74,14 @@
     <script src="search.js" defer></script>
     <script src="proxy.js" defer></script>
 </head>
+    <script>
+    document.addEventListener("mousemove", function(event) {
+      const x = event.clientX / window.innerWidth;
+      const y = event.clientY / window.innerHeight;
+      const bg = `radial-gradient(circle at ${x * 100}% ${y * 100}%, black 1%, #00008B 5%, rgba(0, 0, 0, 0))`;
+      document.body.style.background = bg;
+    });
+  </script>
 <body>
   <div class="header">
     <a href="index.html">Home</a>
