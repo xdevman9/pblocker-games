@@ -8,10 +8,42 @@
   <script src="/js/main.js"></script>
   <link rel="icon" href="pbgameslogo.png" type="image/x-icon" />
   <style>
-    .header {
-      background-color: #333;
+      .header {
+      background-color: transparent;
       padding: 10px 0;
       text-align: center;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 18px;
+      transition: color 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header a:hover {
+      color: #7289da;
+    }
+
+    .header a span {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background-color: rgba( 255, 255, 255, 0.2); /* Adjust opacity as needed */
+    }
+
+    .header a img {
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
     }
     .header a {
       color: white;
@@ -23,21 +55,6 @@
     .header a:hover {
       color: #7289da; 
     }
-    .header a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 18px;
-    transition: color 0.3s;
-    position: relative;
-    z-index: 1;
-    text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px blue, 0 0 60px indigo, 0 0 70px violet;
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rainbowAnimation 10s linear infinite;
-  }
 
      p {
         text-align: center;
@@ -101,7 +118,21 @@
         }
       }
   </style>
-    <script>
+</head>
+<body style="font-family: Arial, sans-serif;  background: linear-gradient(to bottom, #001F3F, #003366); color: #ffffff; font-family: sans-serif; text-align: center;">
+  <div class="header">
+    <a href="index.html"><img src="img/home-icon.png" alt="Home Icon" /><span>Home</span></a>
+    <a href="projects.html"><img src="img/games-icon.png" alt="Games Icon" /><span>Games</span></a>
+    <a href="proxy.html"><img src="img/proxy-icon.png" alt="Proxy Icon" /><span>Proxy</span></a>
+    <a href="settings.html"><img src="img/settings-icon.png" alt="Settings Icon" /><span>Settings</span></a>
+    <a href="partners.html"><img src="img/partners-icon.png" alt="Partners Icon" /><span>Partners</span></a>
+    <a href="credits.html"><img src="img/extra-icon.png" alt="Credits Icon" /><span>Credits</span></a>
+  </div>
+  <h1 style="font-size: 3em; text-align: center;">Games</h1>
+  <input type="text" id="search" onkeyup="searchGames()" placeholder="Search for games..." style="width: 100%; font-size: 18px; padding: 6px 20px; margin: auto; border-radius: 30px; max-width: 600px; margin-bottom: 10px;" />
+  <button onclick="playRandomGame()" style="padding: 10px 20px; margin-bottom: 20px; background-color: #7289da; color: white; border: none; border-radius: 5px; cursor: pointer;">Play Random Game</button>
+  <div id="game-container" class="flex-container"></div>
+      <script>
     document.addEventListener("mousemove", function(event) {
       const x = event.clientX / window.innerWidth;
       const y = event.clientY / window.innerHeight;
@@ -109,20 +140,6 @@
       document.body.style.background = bg;
     });
   </script>
-</head>
-<body style="font-family: Arial, sans-serif;  background: linear-gradient(to bottom, #001F3F, #003366); color: #ffffff; font-family: sans-serif; text-align: center;">
-  <p class="header">
-    <a href="index.html">Home</a> 
-    <a href="projects.html">Games</a>
-    <a href="proxy.html">Proxy</a>
-    <a href="settings.html">Settings</a>
-    <a href="partners.html">Partners</a>
-    <a href="credits.html">Credits</a>
-  </p>
-  <h1 style="font-size: 3em; text-align: center;">Games</h1>
-  <input type="text" id="search" onkeyup="searchGames()" placeholder="Search for games..." style="width: 100%; font-size: 18px; padding: 6px 20px; margin: auto; border-radius: 30px; max-width: 600px; margin-bottom: 10px;" />
-  <button onclick="playRandomGame()" style="padding: 10px 20px; margin-bottom: 20px; background-color: #7289da; color: white; border: none; border-radius: 5px; cursor: pointer;">Play Random Game</button>
-  <div id="game-container" class="flex-container"></div>
   <script>
     let games = [];
     fetch("config/games.json")
