@@ -9,37 +9,43 @@
       .text-center {
         text-align: center;
       }
-      
-      .header {
-      background-color: #333;
+       .header {
+      background-color: transparent;
       padding: 10px 0;
       text-align: center;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
     .header a {
       color: white;
       text-decoration: none;
-      margin: 0 20px;
+      margin: 0 10px;
       font-size: 18px;
-      transition: color 0.3s; 
+      transition: color 0.3s;
+      position: relative;
+      z-index: 1;
     }
+
     .header a:hover {
-      color: #7289da; 
+      color: #7289da;
     }
-      .header a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 18px;
-    transition: color 0.3s;
-    position: relative;
-    z-index: 1;
-    text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px blue, 0 0 60px indigo, 0 0 70px violet;
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rainbowAnimation 10s linear infinite;
-  }
+
+    .header a span {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.2); /* Adjust opacity as needed */
+    }
+
+    .header a img {
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+    }
     .blank {
   background-color: #332f2f;
   font-family: Lexend;
@@ -169,14 +175,13 @@ img {
   <body style="font-family: Arial, sans-serif;  background: linear-gradient(to bottom, #001F3F, #003366); color: #ffffff; font-family: 'Roboto', sans-serif; margin: 0; padding: 5%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
     <div style="width: 100%; max-width: 600px; margin-bottom: 2em;">
     <div style="width: 100%; max-width: 600px;">
-      <div>
-     <div class="header">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Games</a>
-    <a href="proxy.html">Proxy</a>
-    <a href="settings.html">Settings</a>
-    <a href="partners.html">Partner</a>
-    <a href="credits.html">Credits</a>
+  <div class="header">
+    <a href="index.html"><img src="img/home-icon.png" alt="Home Icon" /><span>Home</span></a>
+    <a href="projects.html"><img src="img/games-icon.png" alt="Games Icon" /><span>Games</span></a>
+    <a href="proxy.html"><img src="img/proxy-icon.png" alt="Proxy Icon" /><span>Proxy</span></a>
+    <a href="settings.html"><img src="img/settings-icon.png" alt="Settings Icon" /><span>Settings</span></a>
+    <a href="partners.html"><img src="img/partners-icon.png" alt="Partners Icon" /><span>Partners</span></a>
+    <a href="credits.html"><img src="img/extra-icon.png" alt="Credits Icon" /><span>Credits</span></a>
   </div>
         <h1>Tab Cloaker</h1>
         <p>Enter a new tab title or a image URL below. What you set will be used on the whole site.</p>
