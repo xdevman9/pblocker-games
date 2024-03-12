@@ -23,15 +23,15 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
       background: linear-gradient(to bottom, #001F3F, #003366);
       background-attachment: fixed;
       background-size: cover;
       display: flex;
       flex-direction: column;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
     }
 
     /* Sidebar Styles */
@@ -181,7 +181,7 @@
     document.addEventListener("mousemove", function(event) {
       const x = event.clientX / window.innerWidth;
       const y = event.clientY / window.innerHeight;
-      const bg = `radial-gradient(circle at ${x * 100}% ${y * 100}%, green, blue, red)`;
+      const bg = `radial-gradient(circle at ${x * 100}% ${y * 100}%, green, green 5%, rgba(0, 0, 0, 0))`;
       document.body.style.background = bg;
     });
   </script>
